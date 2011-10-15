@@ -40,4 +40,6 @@ int isCrossing(int **, int, int);
 
 int rho(int, int, int, int, int, float);
 
+int inImage(Image *, int, int);
+
 #endif /* HW3_H_ */

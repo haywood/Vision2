@@ -6,8 +6,8 @@
 
 int main(int argc, char *argv[])
 {
-   char *inputo, *inputh, *outputl;
 	int threshold, rh, theta, rows, cols, rScale, tScale;
+   char *inputo, *inputh, *outputl;
 	float r, t, diag, x, y;
 	Image io, ih;
 

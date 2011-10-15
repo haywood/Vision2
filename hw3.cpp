@@ -23,3 +23,8 @@ int rho(int theta, int x, int y, int rScale, int tScale, float diag)
 	float r = (y*cos(t) - x*sin(t));
 	return (rScale/(2*diag))*(r + diag);
 }
+
+int inImage(Image * im, int x, int y)
+{
+   return (x >= 0 && y >= 0 && x < getNCols(im) && y < getNRows(im));
+}

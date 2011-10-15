@@ -23,7 +23,7 @@ UTILSH = vision_utilities.h
 P1SRC = p1.cpp hw3.cpp hw3.hpp
 P2SRC = p2.cpp hw3.cpp hw3.hpp
 P3SRC = p3.cpp hw3.hpp
-P4SRC = p4.cpp
+P4SRC = p4.cpp hw3.cpp hw3.hpp
 
 # Edge Threshold for getting strong edges on all images. 
 # Change this.
@@ -31,7 +31,7 @@ EDGE_THRESHOLD = 17
 
 # Hough Threshold for getting consistent lines on the 
 # hough_simple images. Change this.
-HOUGH_SIMPLE_1_THRESHOLD = 100
+HOUGH_SIMPLE_1_THRESHOLD = 80
 HOUGH_SIMPLE_2_THRESHOLD = 82
 
 # Hough Threshold for getting consistent lines on the 
