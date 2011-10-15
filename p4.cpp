@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
 	int threshold, rh, theta, rows, cols, rScale, tScale;
    char *inputo, *inputh, *inpute, *outputl;
-	float r, t, diag, x, y, x0, y0, x1, y1;
+	float r, t, diag, x, y, x0, y0, x1, y1, c, s;
 	Image io, ih, ie;
 
 	if (argc < 5) {
@@ -40,24 +40,27 @@ int main(int argc, char *argv[])
 			if (getPixel(&ih, rh, theta) >= threshold) {
 				r = ((2*diag)/rScale)*rh - diag;
 				t = (PI/tScale)*theta - PI/2;
-				x = r*cos(t + PI/2);
-				y = r*sin(t + PI/2);
-				x0 = x - diag*cos(t);
-				y0 = y - diag*sin(t);
-				x1 = x + diag*cos(t);
-				y1 = y + diag*sin(t);
+            c = cos(t);
+            s = sin(t);
+            
+				x = -r*s; // cos(t + pi/2) = -sin(t)
+				y = r*c; // sin(t + pi/2) = cos(t)
+				x0 = x - diag*c;
+				y0 = y - diag*s;
+				x1 = x + diag*c;
+				y1 = y + diag*s;
 
 				while (!inImage(&io, x0, y0)) {
-       			x0 += cos(t);
-					y0 += sin(t);
+       			x0 += c;
+					y0 += s;
     			}
 
 				while (inImage(&io, x0, y0)) {
        			if (getPixel(&ie, y0, x0)) {
              		setPixel(&io, y0, x0, 255);
           		}
-					x0 += cos(t);
-					y0 += sin(t);
+					x0 += c;
+					y0 += s;
     			}
 				
 				//line(&io, y0, x0, y1, x1, 255);
