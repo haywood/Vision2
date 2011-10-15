@@ -21,13 +21,13 @@ UTILSH = vision_utilities.h
 # Enter the names of your source files here. If you have header files as well,
 # then do not include them here (they will be autoincluded).
 P1SRC = p1.cpp hw3.cpp hw3.hpp
-P2SRC = p2.cpp
+P2SRC = p2.cpp hw3.cpp hw3.hpp
 P3SRC = p3.cpp
 P4SRC = p4.cpp
 
 # Edge Threshold for getting strong edges on all images. 
 # Change this.
-EDGE_THRESHOLD = 0
+EDGE_THRESHOLD = 17
 
 # Hough Threshold for getting consistent lines on the 
 # hough_simple images. Change this.
@@ -70,8 +70,8 @@ test3: p3
 
 # 'make test4' tests only program 4
 test4: p4
-	./p4 hough_simple_1.pgm h21.pgm p21.pgm $(HOUGH_SIMPLE_THRESHOLD) p41.pgm
-	./p4 hough_simple_2.pgm h22.pgm p22.pgm $(HOUGH_SIMPLE_THRESHOLD) p42.pgm
+	./p4 hough_simple_1.pgm h21.pgm p21.pgm $(HOUGH_SIMPLE_1_THRESHOLD) p41.pgm
+	./p4 hough_simple_2.pgm h22.pgm p22.pgm $(HOUGH_SIMPLE_2_THRESHOLD) p42.pgm
 	./p4 hough_complex_1.pgm h23.pgm p23.pgm $(HOUGH_COMPLEX_THRESHOLD) p43.pgm
 
 # 'make all' builds all 4 programs (but doesn't run them)
