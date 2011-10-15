@@ -2,7 +2,7 @@
 # Comments begin with a # (like this line)
 
 # Your UNI
-UNI = abc1234
+UNI = mhr2126
 
 # VARIOUS VARIABLES (you will need to change some of these)
 # The compiler. If you're writing code using c++, change gcc to g++
@@ -24,6 +24,7 @@ P1SRC = p1.cpp hw3.cpp hw3.hpp
 P2SRC = p2.cpp hw3.cpp hw3.hpp
 P3SRC = p3.cpp hw3.hpp
 P4SRC = p4.cpp hw3.cpp hw3.hpp
+IMGS = hough_complex_1.pgm hough_simple_1.pgm hough_simple_2.pgm
 
 # Edge Threshold for getting strong edges on all images. 
 # Change this.
@@ -100,7 +101,7 @@ vision_utilities.o: vision_utilities.c vision_utilities.h
 # 'make submit' creates a tar of all files in the directory
 # NOTE 1: It also runs 'make clean' before submission.
  submit: clean
-	tar -czvf $(UNI)-hw3.tar.gz $(P1SRC) $(P2SRC) $(P3SRC) $(P4SRC) $(UTILS) $(UTILSH) Makefile README
+	tar -czvf $(UNI)-hw3.tar.gz $(P1SRC) $(P2SRC) $(P3SRC) $(P4SRC) $(UTILS) $(UTILSH) Makefile README $(IMGS)
 
 # 'make extract' extracts all files into a new folder named UNI
 extract: $(UNI).tar.gz
