@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
 	if (argc < 5) {
     	fprintf(stderr, "usage: %s <input edge image> <edge threshold> <output thresholded edge image> <output hough image>\n", argv[0]);
-		exit(1);
+		exit(0);
 	}
 
 	inpute = argv[1];
