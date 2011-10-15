@@ -22,7 +22,7 @@ UTILSH = vision_utilities.h
 # then do not include them here (they will be autoincluded).
 P1SRC = p1.cpp hw3.cpp hw3.hpp
 P2SRC = p2.cpp hw3.cpp hw3.hpp
-P3SRC = p3.cpp
+P3SRC = p3.cpp hw3.hpp
 P4SRC = p4.cpp
 
 # Edge Threshold for getting strong edges on all images. 
