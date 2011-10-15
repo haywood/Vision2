@@ -1,4 +1,4 @@
-#include "hw3.hpp"
+#include "hw3.h"
 
 float gradient(Image *im, int x, int y)
 {

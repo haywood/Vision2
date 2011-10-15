@@ -2,7 +2,7 @@
  * p2.cpp
  */
 
-#include "hw3.hpp"
+#include "hw3.h"
 
 int main(int argc, char *argv[])
 {

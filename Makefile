@@ -20,10 +20,10 @@ UTILSH = vision_utilities.h
 
 # Enter the names of your source files here. If you have header files as well,
 # then do not include them here (they will be autoincluded).
-P1SRC = p1.cpp hw3.cpp hw3.hpp
-P2SRC = p2.cpp hw3.cpp hw3.hpp
-P3SRC = p3.cpp hw3.hpp
-P4SRC = p4.cpp hw3.cpp hw3.hpp
+P1SRC = p1.cpp hw3.cpp hw3.h
+P2SRC = p2.cpp hw3.cpp hw3.h
+P3SRC = p3.cpp hw3.h
+P4SRC = p4.cpp hw3.cpp hw3.h
 IMGS = hough_complex_1.pgm hough_simple_1.pgm hough_simple_2.pgm
 
 # Edge Threshold for getting strong edges on all images. 
