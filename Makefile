@@ -110,6 +110,6 @@ extract: $(UNI).tar.gz
 	
 # 'make clean' removes all output and temporary files
 clean:
-	-rm -f p1 p2 p3 p4 vision_utilities.o $(OUTPUTS_TO_CLEAN) core CORE
+	-rm -rf p1 p2 p3 p4 vision_utilities.o $(OUTPUTS_TO_CLEAN) core CORE p1.dSYM p2.dSYM p3.dSYM p4.dSYM
 
 
