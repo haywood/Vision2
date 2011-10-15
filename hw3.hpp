@@ -32,9 +32,11 @@ static const int GRAD_Y[OP_SIZE][OP_SIZE] = {
 	{	-1, 	-2, 	-1},
 };
 
-#include "Laplacian.h"
-
 float gradient(Image *, int, int);
+
+int laplacian(Image *, int, int);
+
+int isCrossing(int **, int, int);
 
 int rho(int, int, int, int, int, float);
 

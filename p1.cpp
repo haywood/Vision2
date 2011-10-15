@@ -7,9 +7,9 @@
 
 int main(int argc, char *argv[])
 {
+	int rows, cols, **lapl;
+	float max, d, **edges;
    char *input, *output;
-	int rows, cols;
-	float max, d;
 	Image im;
 	short s;
 
@@ -21,18 +21,24 @@ int main(int argc, char *argv[])
 	output = argv[2];
 
 	readImage(&im, input);
-	Laplacian lp(&im);
-	rows = lp.rows();
-	cols = lp.cols();
+	rows = getNRows(&im);
+	cols = getNCols(&im);
 
-	float **edges = new float * [rows];
+	edges = new float * [rows];
 	for (int i = 0; i < rows; ++i)
 		edges[i] = new float[cols];
+
+	lapl = new int * [rows];
+	for (int i = 0; i < rows; ++i) {
+		lapl[i] = new int[cols];
+		for (int j = 0; j < cols; ++j)
+			lapl[i][j] = laplacian(&im, j, i);
+	}
 
 	for (int i = 0; i < rows; ++i) {
     	for (int j = 0; j < cols; ++j) {
 			// check the Laplacian to see if there is an edge crossing
-			if (lp.isCrossing(j, i)) { 
+			if (isCrossing(lapl, j, i)) { 
 				d = gradient(&im, j, i); // calculate magnitude of gradient
 				edges[i][j] = d; // set edge intensity
 				if (edges[i][j] > max)  // track maximum intensity for scaling
