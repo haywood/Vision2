@@ -32,12 +32,12 @@ EDGE_THRESHOLD = 17
 
 # Hough Threshold for getting consistent lines on the 
 # hough_simple images. Change this.
-HOUGH_SIMPLE_1_THRESHOLD = 80
-HOUGH_SIMPLE_2_THRESHOLD = 82
+HOUGH_SIMPLE_1_THRESHOLD = 100
+HOUGH_SIMPLE_2_THRESHOLD = 100
 
 # Hough Threshold for getting consistent lines on the 
 # hough_complex_1 image. Change this.
-HOUGH_COMPLEX_THRESHOLD = 80
+HOUGH_COMPLEX_THRESHOLD = 160
 
 # This contains a list of various images and other files generated from 
 # running your programs. By default, it contains the filenames of all files
