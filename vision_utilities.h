@@ -5,7 +5,7 @@
 #include <sys/time.h>
 
 
-#define CLAMP(A,L,H)       ((A)<=(L) ? (L) : (A)<=(H) ? (A) : (H))
+#define CLAMP(A,L,H) ((A)<=(L) ? (L) : (A)<=(H) ? (A) : (H))
 #define MAX(A,B)   ((A) > (B) ? (A) : (B))
 #define MIN(A,B)   ((A) < (B) ? (A) : (B))
 
