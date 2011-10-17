@@ -1,0 +1,29 @@
+COMS W 4731 HW 3
+Michael Reed
+mhr2126
+
+I use an edge threshold of 17.
+My hough thresholds are:
+	simple 1 - 100
+	simple 2 - 70
+	complex 1 - 80
+
+p1.cpp - Reads a graylevel image and produces an edge image in which the intensity at each pixel is proportional to its edge intensity. Depends on hw3.cpp and hw3.h
+
+p2.cpp - Reads an edge image and outputs a corresponding hough transform and a thresholded edge image. Takes the threshold as input as well. Depends on hw3.cpp and hw3.h
+
+p3.cpp Reads an image and its hough transform and outputs a version of the original image with lines drawn according to the hough transform. Uses a threshold that is supplied as parameter as well. Depends on hw3.h
+
+p4.cpp Reads an image, its hough transform, and a corresponding thresholded edge image along with a threshold for the hough transform and uses them to ouput a version of the original image with line segments drawn along the edges.
+	The algorithm is as follows: 
+	For a given rho, theta pair, find the closest point on the line, p. 
+	Then translate to p = (x - diagonal*cos(theta), y - diagonal*sin(theta)). 
+	While p is not on the image
+	do 
+		p = p + (cos(theta), sin(theta)).
+	end
+	While p is on the image
+	do
+		if pixel at p in the edge image is 1 then
+			set p to 255 in the original
+	end
