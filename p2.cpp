@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	cols = getNCols(&ie);
 	diag = sqrt(pow(rows, 2) + pow(cols, 2));
 	rScale = diag;
-	tScale = 40;
+	tScale = 50;
 	setSize(&oh, rScale, tScale);
 	a = new int * [rScale];
 	for (int i = 0; i < rScale; ++i) {

@@ -33,7 +33,7 @@ EDGE_THRESHOLD = 17
 # Hough Threshold for getting consistent lines on the 
 # hough_simple images. Change this.
 HOUGH_SIMPLE_1_THRESHOLD = 100
-HOUGH_SIMPLE_2_THRESHOLD =	80 
+HOUGH_SIMPLE_2_THRESHOLD =	70 
 
 # Hough Threshold for getting consistent lines on the 
 # hough_complex_1 image. Change this.
