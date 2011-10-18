@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[])
 {
-	int threshold, rh, theta, rows, cols, rScale, tScale, hitImage;
+	int threshold, rh, theta, rows, cols, rScale, tScale, hitImage, i;
 	char *inputo, *inputh, *inpute, *outputl;
 	float r, t, diag, x, y, c, s;
 	Image io, ih, ie;
@@ -49,18 +49,22 @@ int main(int argc, char *argv[])
 				c = cos(t);
 				s = sin(t);
 
-				x = -r*s - diag*c; // cos(t + pi/2) = -sin(t)
-				y = r*c - diag*s; // sin(t + pi/2) = cos(t)
+				x = -r*s; // cos(t + pi/2) = -sin(t)
+				y = r*c; // sin(t + pi/2) = cos(t)
+				if (inImage(&io, x, y)) {
+       			x -= diag*c;
+					y -= diag*s;
+				}
 
 				hitImage = 0;
-				while (!hitImage || inImage(&io, x, y)) {
-					if (!hitImage && inImage(&io, x, y))
+				i = 0;
+				while (!hitImage || inImage(&io, x + i*c, y + i*s)) {
+					if (!hitImage && inImage(&io, x + i*c, y + i*s))
 						hitImage = 1;
-					if (hitImage && getPixel(&ie, y, x)) {
-						setPixel(&io, y, x, 255);
+					if (hitImage && getPixel(&ie, y + i*s, x + i*c)) {
+						setPixel(&io, y + i*s, x + i*c, 255);
 					}
-					x += c;
-					y += s;
+					i++;
 				}
 			}
 		}
